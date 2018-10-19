@@ -1,0 +1,17 @@
+hr {
+    background: green;
+    height: 4px;
+}
+
+h3 {
+    color: green;
+}
+
+.color2{
+    color: blue;
+}
+
+.color2 + hr{
+    background: blue;
+    height: 4px;
+}
