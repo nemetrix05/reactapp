@@ -4,10 +4,11 @@ import './index.css';
 //import App from './App';
 //import State from './components/state';
 //import StatePartTwo from './components/statePart2';
-import ConditionsOne from './components/condicionalP1';
+//import ConditionsOne from './components/condicionalP1';
+import Formularios from './components/formularios'
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<ConditionsOne />, document.getElementById('root'));
+ReactDOM.render(<Formularios />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
