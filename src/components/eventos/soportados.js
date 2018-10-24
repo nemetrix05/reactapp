@@ -51,4 +51,6 @@ class Soportado extends Component{
     }
 }
 
-export default Soportado;
+export { 
+    Soportado 
+}

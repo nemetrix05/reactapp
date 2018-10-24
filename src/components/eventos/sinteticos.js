@@ -27,4 +27,5 @@ class Sinteticos extends Component{
     }
 }
 
-export default Sinteticos;
+// Se pueden exportar componentes de forma no default asi
+export { Sinteticos }

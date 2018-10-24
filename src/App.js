@@ -24,9 +24,13 @@ function Include (props){
 */
 
 /*Metodo 3: 
-Usar una funcion en una sola linea y pasarle las props
-const Include = (props) => <h2>{props.title}</h2>
-*/
+Usar una funcion arrow en una sola linea y pasarle las props
+const Include = () => {
+  return(
+    <h2>Componente Simple</h2> 
+  );
+}
+ */
 
 /*Metodo 4:
 Usar el metodo clasico para definir un componente, haciendo una extencion de Component

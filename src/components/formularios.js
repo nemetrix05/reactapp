@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // Hojas de Estilo en React
 import '../assets/formularios.css';
-// Componentes externos
-import Sinteticos from './eventos/sinteticos';
-import Soportado from './eventos/soportados';
+// Componentes externos se importan entre llaves {componente}
+import { Sinteticos } from './eventos/sinteticos';
+import { Soportado } from './eventos/soportados';
 
 
 /* TIPOS DE EVENTOS EN REACT 
