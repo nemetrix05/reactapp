@@ -9,10 +9,12 @@ import './index.css';
 //import { Formulario }  from './components/formularios/formulario'; 
 //import Children from './components/children/children';
 //import Constructor from './components/ciclodevida/montaje/constructor';
-import Actualizacion from './components/ciclodevida/actualizacion/base';
+//import Actualizacion from './components/ciclodevida/actualizacion/base';
+//import BaseDesmontaje from './components/ciclodevida/desmontaje/base';
+import DidCatch from './components/ciclodevida/error/didcatch';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Actualizacion content="FASE DE MONTAJE" />, document.getElementById('root'));
+ReactDOM.render(<DidCatch />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

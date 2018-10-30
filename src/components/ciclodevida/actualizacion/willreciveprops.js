@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+// Para usar PureComponent, es necesario importar la libreria y extender la clase a PureComponent y no a component, para que realice la validacion boleana sobre las props que cambian en la clase
+import React, { Component/*, PureComponent */ } from 'react';
 // Importamos el modulo proptypes para hacer obligatorio la validacion de props
 import PropTypes from 'prop-types'
 
@@ -36,6 +37,7 @@ class GetImage extends Component{
     componentWillReceiveProps(nextProps){    
         // Con las nuevas props recibidas actualizamos el estado para que cambie el source
         // esta condicional compara si las props han cambiado si vuelve y recibe el mismo valor renderizara solo una vez
+        console.log('1. componentWillReceiveProps()');
         if(this.props.playa !== nextProps.playa){
             this.setState({
                 src: PLAYAS[nextProps.playa]
@@ -44,10 +46,51 @@ class GetImage extends Component{
     }
 
 
+
+    // 1. Este metodo solo sirve para una validacion sencilla, es recomendable usar el PureComponent para validar por sistema las demas props
+    shouldComponentUpdate(nextProps){
+        // Este componente se ejecuta siempre y cuando reciba nuevas props o cambie su state
+        console.log('2. shouldComponentUpdate()');
+        // Formula para detectar nuevas y antiguas props
+        console.log('Props antiguas:' + this.props.playa );
+        console.log('Props Nuevas:' + nextProps.playa );
+        
+        // En el return de la funcion se deben ejecutar las condiciones para que el componente se renderize o no, es este caso le indicamos si las props cambian renderize si son iguales no. Con esto nos evitamos cargar el contenido varias veces 
+        return this.props.playa !== nextProps.playa
+    }
+
+    componentWillUpdate(nextProps, nextState){
+        console.log('componentWillUpdate()');
+        console.log(nextProps, nextState);
+        // Este componente es usado para hacer alguna animacion algun elemento antes de que se renderize
+        const elemento = document.querySelector("img");
+        // el metodo animate, es el usado en css que va de una pocision a otra haciendo una animacion
+        elemento.animate([ { 
+                filter: 'blur(0px)' 
+            }, {
+                filter: 'blur(0px)'
+            }], { 
+               duration: 500,
+               easing: 'ease' 
+            })  
+    }
+
+
+    // Esta es la ultima fase del ciclo de actualizacion, muestra ya las props y states recibidas e impresa en el render, recibe 2 parametros prevProps y prevState
+
+    componentDidUpdate(prevProps, prevState){
+
+        const element = document.querySelector('img');
+
+        console.log('Alt Imagen', element.alt);
+    }
+
+
     // Metodo render siempre de ultimas
     render(){
+        console.log('3. render()');
         return(
-            <ul>
+            <ul id="row">
                 <li>
                     <img 
                         alt={this.props.playa}
@@ -80,7 +123,7 @@ class Crecive extends Component{
     EachButton = (playas) =>{
         return(
             <button 
-                disabled={playas === this.CurrentState()}
+                //disabled={playas === this.CurrentState()}
                 key={playas} 
                 onClick={() => this.setState({playas})}
             >
