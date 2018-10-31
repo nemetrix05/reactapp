@@ -9,6 +9,8 @@
 */
 
 import React, { Component } from 'react';
+// Aqui importamos el render de nuestro contenido
+import { Vista } from './contenido-fetchapi';
 
 class FetchApi extends Component{
 
@@ -39,27 +41,11 @@ class FetchApi extends Component{
             })
     }
 
-    // Creamos un metodo que cargara el valor actual del state
-    _showMonedas () {
-        // rescato el state transformado con los datos de bpi del objeto}
-        const { bpi } = this.state
-        const transform = Object.keys(bpi) // aqui sacan todas las monedas disponibles dentro de bpi {} 
-        
-        return transform.map(moneda =>(
-            <p key={moneda}>Bitcoin en: {moneda} <strong>Equivale a: {bpi[moneda].rate}</strong></p>
-        ))
-    }   
-
-
     render(){
         return(
-            <div>
-                {this._showMonedas()}
-            </div>
+           <Vista bpi={this.state.bpi}/>
         );
     }
 }
 
-export {
-    FetchApi
-}
+export default FetchApi;

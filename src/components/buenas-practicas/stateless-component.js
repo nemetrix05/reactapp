@@ -25,7 +25,7 @@ function Contenido (props){
 
 Contenido.propTypes = {
     title: PropTypes.string.isRequired,
-    children: PropTypes.number.isRequired
+    children: PropTypes.string.isRequired
 }
 
 //2. FORMA CONSTANTE | Recomendada si no usa state o ciclos de vida o es un componente estatico
