@@ -11,10 +11,12 @@ import './index.css';
 //import Constructor from './components/ciclodevida/montaje/constructor';
 //import Actualizacion from './components/ciclodevida/actualizacion/base';
 //import BaseDesmontaje from './components/ciclodevida/desmontaje/base';
-import DidCatch from './components/ciclodevida/error/didcatch';
+//import DidCatch from './components/ciclodevida/error/didcatch';
+//import Herencia from './components/buenas-practicas/herencia';
+import Articulo from './components/buenas-practicas/stateless-component';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<DidCatch />, document.getElementById('root'));
+ReactDOM.render(<Articulo />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
